@@ -8,7 +8,6 @@ import { FoodsService } from '../../foods.service';
     selector: 'app-productgroup',
     standalone: true,
     templateUrl: './productgroup.component.html',
-    styleUrl: './productgroup.component.css',
     imports: [ProductviewComponent, CommonModule]
 })
 export class ProductgroupComponent {

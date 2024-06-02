@@ -1,0 +1,14 @@
+<div class="grid grid-cols-3 gap-4 mx-32 my-10 p-10 bg-gray-200 rounded-lg">
+    <div class="col-span-2 flex justify-between flex-col">
+        <div>
+            <h1 class="text-4xl mb-11 font-bold">{{product?.name}}</h1>
+            <p>Price: ${{product?.price}}</p>
+        </div>
+        <div class="my-10">
+            <button class="bg-gray-900 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
+        </div>
+    </div>
+
+    <div><img src="{{product?.photo}}" alt="product?.name"></div>
+
+</div>

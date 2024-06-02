@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { ProductgroupComponent } from "../productgroup/productgroup.component";
 
 @Component({
-    selector: 'app-store-body',
+    selector: 'app-storebody',
     standalone: true,
-    templateUrl: './body.component.html',
-    styleUrl: './body.component.css',
+    templateUrl: './storebody.component.html',
     imports: [ProductgroupComponent]
 })
-export class BodyComponent {
-    category = "fruit"
+export class StorebodyComponent {
+  category = "Fruit"
 }
