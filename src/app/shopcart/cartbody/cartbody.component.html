@@ -1,0 +1,17 @@
+<div class="my-32 mx-20 p-10 bg-gray-200 rounded-xl grid grid-cols-3 gap-4">
+    <div >
+        <h1 class="font-bold text-4xl mb-20">Cart</h1>
+        <div>
+            <app-cart-item *ngFor="let item of cartList" [product]="item"></app-cart-item>
+        </div>
+    </div>
+    <div></div>
+    <div class="">
+        <div class="mt-10">
+            <div class="mb-10 mt-2 text-xl font-semibold">
+                Total: $5.99
+            </div>
+            <a href="#" class="bg-gray-900 py-2 px-4 text-white rounded font-bold">Checkout</a>
+        </div>
+    </div>
+</div>

@@ -62,7 +62,14 @@ export class FoodsService {
         photo: "https://cdn-icons-png.flaticon.com/512/721/721098.png",
         price: 1.49,
         category: "Fruit"
-    }
+    },
+    {
+      id: 9,
+      name: "Pineapple",
+      photo: "https://cdn-icons-png.flaticon.com/512/8554/8554938.png",
+      price: 2.49,
+      category: "Fruit"
+  }
 ]
   getAllFoods(): Product[] {
     return this.productList;
