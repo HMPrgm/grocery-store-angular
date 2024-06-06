@@ -2,14 +2,17 @@
     <div >
         <h1 class="font-bold text-4xl mb-20">Cart</h1>
         <div>
-            <app-cart-item *ngFor="let item of cartList" [product]="item"></app-cart-item>
+            <app-cart-item *ngFor="let item of getCart()" [productWithQty]="item"></app-cart-item>
+            <p ng-if="!getCart()" class="font-medium text-xl">
+                No Items in Cart
+            </p>
         </div>
     </div>
     <div></div>
     <div class="">
         <div class="mt-10">
             <div class="mb-10 mt-2 text-xl font-semibold">
-                Total: $5.99
+                Total: {{getPrice()}}
             </div>
             <a href="#" class="bg-gray-900 py-2 px-4 text-white rounded font-bold">Checkout</a>
         </div>

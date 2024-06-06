@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
 import { FoodsService } from '../../foods.service';
 import { Product } from '../../product';
+import { CartService } from '../../cart.service';
 @Component({
   selector: 'app-productbody',
   standalone: true,
@@ -12,10 +13,18 @@ import { Product } from '../../product';
 export class ProductbodyComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   foodService: FoodsService = inject(FoodsService);
+  cartService: CartService = inject(CartService)
   productId = -1;
   product: Product | undefined;
   constructor() {
       this.productId = Number(this.route.snapshot.params['id']);
       this.product = this.foodService.getFoodById(this.productId);
   }
+
+  addProduct(p:Product | undefined): void{
+    if (!p) {return;}
+    this.cartService.addToCart(p);
+    console.log(this.cartService.getCart())
+  }
+
 }
