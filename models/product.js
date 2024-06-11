@@ -24,4 +24,6 @@ productSchema.virtual('formattedPrice').get(function() {
 return `$${this.price.toFixed(2)}`;
 });
 
-module.exports = mongoose.model('Product', productSchema);
+const Product = mongoose.model('Product', productSchema)
+
+module.exports = Product;

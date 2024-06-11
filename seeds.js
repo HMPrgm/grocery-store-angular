@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Product = require('./models/product')
-const Cart = require('./models/cart')
+// const Cart = require('./models/cart')
 
 main().catch(err => console.log(err));
 
@@ -10,10 +10,12 @@ async function main() {
 }
 
 Product.deleteMany({})
-Cart.deleteMany({})
+.then(res => console.log(res))
+.catch(e => console.log(e))
+// Cart.deleteMany({})
 
 Product.insertMany(
-    {
+    [{
         name: "Apple",
         photo: "https://cdn-icons-png.freepik.com/512/123/123431.png",
         price: 1.49,
@@ -66,6 +68,7 @@ Product.insertMany(
       photo: "https://cdn-icons-png.flaticon.com/512/8554/8554938.png",
       price: 2.49,
       category: "Fruit"
-  }
+  }]
 )
-
+.then(res => console.log(res))
+.catch(e => console.log(e))

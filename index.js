@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const Product = require('./models/product')
-main().catch(err => console.log(err));
+
 
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/grocery-store');
@@ -16,7 +16,9 @@ app.get('/products', (req,res)=> {
 
 
 app.post('/cart', (req,res) => {
-
+    const {id} = req.body;
+    const product = Product.findById(id);
+    console.log(product);
 })
 
 app.get('/cart', (req,res)=>{
