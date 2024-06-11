@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Product } from './product';
 import { ProductWithQty } from './product-with-qty';
-const axios = require('axios');
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ApiService {
-  apiUrl = "http://localhost:5001/"
+  apiUrl = "http://localhost:5001"
   
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  async getProducts() {//:Product[] {
-    var products = await axios.get(`${this.apiUrl}/products`);
-    console.log(products)
+  getProducts():  Observable<any>{//:Product[] {
+     return this.http.get<any>(`${this.apiUrl}/products`);
   }
 
   // getCart(): ProductWithQty[] {

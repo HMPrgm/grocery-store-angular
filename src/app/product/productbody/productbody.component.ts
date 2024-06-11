@@ -29,7 +29,7 @@ export class ProductbodyComponent {
   }
 
   addProduct(p:Product | undefined): void{
-    this.api.getProducts()
+    console.log(this.api.getProducts().subscribe());
     if (!p) {return;}
     this.cartService.addToCart(p);
     console.log(this.cartService.getCart())

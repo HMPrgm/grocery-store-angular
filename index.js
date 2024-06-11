@@ -9,8 +9,13 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+
+
 app.get('/products', (req,res)=> {
-    res.send(Product.find({}));
+  res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.send(Product.find({}));
 })
 
 
