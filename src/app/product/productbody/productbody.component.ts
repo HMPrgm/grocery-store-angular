@@ -1,7 +1,7 @@
 import { Component, inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
-import { FoodsService } from '../../foods.service';
+// import { FoodsService } from '../../foods.service';
 import { Product } from '../../product';
 import { CartService } from '../../cart.service';
 import { ApiService } from '../../api.service';
@@ -15,24 +15,29 @@ import { ApiService } from '../../api.service';
 })
 export class ProductbodyComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  foodService: FoodsService = inject(FoodsService);
+  // foodService: FoodsService = inject(FoodsService);
   cartService: CartService = inject(CartService);
   api: ApiService = inject(ApiService);
   
-  productId = -1;
+  productId: string;
   product: Product | undefined;
 
   
   constructor() { 
-      this.productId = Number(this.route.snapshot.params['id']);
-      this.product = this.foodService.getFoodById(this.productId);
+      this.productId = this.route.snapshot.params['id'];
+      this.initialize(this.productId)
+  }
+
+  async initialize(productId:string)
+  {
+    this.product = await this.api.getProductById(productId);
+    console.log(this.product)
   }
 
   addProduct(p:Product | undefined): void{
-    console.log(this.api.getProducts().subscribe());
+    console.log(this.api.getProducts());
     if (!p) {return;}
     this.cartService.addToCart(p);
-    console.log(this.cartService.getCart())
     
   }
 

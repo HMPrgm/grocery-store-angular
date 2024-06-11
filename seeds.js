@@ -68,7 +68,15 @@ Product.insertMany(
       photo: "https://cdn-icons-png.flaticon.com/512/8554/8554938.png",
       price: 2.49,
       category: "Fruit"
-  }]
+    },
+    {
+      name: "Raspberries",
+      photo: "https://cdn-icons-png.flaticon.com/512/6866/6866618.png",
+      price: 3.49,
+      category: "Fruit"
+    }
+
+]
 )
 .then(res => console.log(res))
 .catch(e => console.log(e))

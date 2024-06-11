@@ -12,4 +12,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class ProductviewComponent {
   @Input() product!: Product;
   
+  constructor(){
+    
+  }
 }

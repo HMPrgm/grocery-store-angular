@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ProductviewComponent } from "../productview/productview.component";
 import { Product } from '../../product';
 import { CommonModule } from '@angular/common';
-import { FoodsService } from '../../foods.service';
+import { ApiService } from '../../api.service';
 
 @Component({
     selector: 'app-productgroup',
@@ -12,9 +12,15 @@ import { FoodsService } from '../../foods.service';
 })
 export class ProductgroupComponent {
     productList: Product[];
-    foodsService: FoodsService = inject(FoodsService);
+    api: ApiService = inject(ApiService);
     constructor() {
-        this.productList = this.foodsService.getAllFoods();
+        this.productList = []
+        this.updateProductList()
+    }
+
+    async updateProductList() {
+        this.productList = await this.api.getProducts()
+        console.log(this.productList)
     }
 
 }

@@ -17,7 +17,7 @@ export class CartService {
   }
   addToCart(product : Product){
     const existingProduct : ProductWithQty | undefined = this.cart.find(p => {
-      p.product.id == product.id && p.product.price == product.price;
+      p.product._id == product._id && p.product.price == product.price;
     })
     if (existingProduct) {
       existingProduct.qty += 1;
