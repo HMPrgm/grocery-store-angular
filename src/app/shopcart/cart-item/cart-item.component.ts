@@ -11,6 +11,5 @@ import { ProductWithQty } from '../../product-with-qty';
 })
 export class CartItemComponent {
   @Input() productWithQty!: ProductWithQty;
-  product: Product = this.productWithQty.product;
-  qty: Number = this.productWithQty.qty;
+
 }

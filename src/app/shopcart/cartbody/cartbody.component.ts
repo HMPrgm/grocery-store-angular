@@ -3,7 +3,7 @@ import { CartItemComponent } from "../cart-item/cart-item.component";
 import { Product } from '../../product';
 import { CommonModule } from "@angular/common";
 import { ProductWithQty } from '../../product-with-qty';
-import { CartService } from '../../cart.service';
+import { ApiService } from '../../api.service';
 
 @Component({
     selector: 'app-cartbody',
@@ -13,12 +13,17 @@ import { CartService } from '../../cart.service';
     imports: [CartItemComponent, CommonModule]
 })
 export class CartbodyComponent {
-    cartService: CartService = inject(CartService);
+    api: ApiService = inject(ApiService);
+    cartItems: ProductWithQty[];
 
-    getCart(): ProductWithQty[]{
-        return this.cartService.getCart();
+    constructor(){
+        this.cartItems = []
+        this.getCart()
+    }
+    async getCart(){
+        this.cartItems =  await this.api.getCart();
     }
     getPrice(): string{
-        return this.cartService.getPrice();
+        return "$" + this.cartItems.map(p => p.product.price * p.qty).reduce((a,c)=> a+c,0).toFixed(2);
     }
 }

@@ -2,8 +2,8 @@
     <div >
         <h1 class="font-bold text-4xl mb-20">Cart</h1>
         <div>
-            <app-cart-item *ngFor="let item of getCart()" [productWithQty]="item"></app-cart-item>
-            <p ng-if="!getCart()" class="font-medium text-xl">
+            <app-cart-item *ngFor="let item of cartItems" [productWithQty]="item"></app-cart-item>
+            <p ng-if="cartItems.length <= 0" class="font-medium text-xl">
                 No Items in Cart
             </p>
         </div>

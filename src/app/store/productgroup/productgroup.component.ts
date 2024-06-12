@@ -20,7 +20,6 @@ export class ProductgroupComponent {
 
     async updateProductList() {
         this.productList = await this.api.getProducts()
-        console.log(this.productList)
     }
 
 }

@@ -40,7 +40,7 @@ export class ApiService {
   }
 
   async getCart(): Promise<ProductWithQty[]> {
-      return (await this.getProductsPromise('products') as ProductWithQty[]);
+      return (await this.getProductsPromise('cart') as ProductWithQty[]);
   }
   addToCart(p:Product): void{
     const info = {id: p._id}

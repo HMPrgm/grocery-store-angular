@@ -37,7 +37,6 @@ app.post('/cart', async (req,res) => {
   } else {
     cart.find(val => val.product._id == id).qty++
   }
-  console.log(cart)
 })
 
 app.get('/cart', (req,res)=>{
