@@ -34,11 +34,9 @@ export class ProductbodyComponent {
     console.log(this.product)
   }
 
-  addProduct(p:Product | undefined): void{
-    console.log(this.api.getProducts());
+  async addProduct(p:Product | undefined): Promise<void>{
     if (!p) {return;}
-    this.cartService.addToCart(p);
-    
+    this.api.addToCart(p)
   }
 
 }
