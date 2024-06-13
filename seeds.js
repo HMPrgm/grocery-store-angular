@@ -80,3 +80,23 @@ Product.insertMany(
 )
 .then(res => console.log(res))
 .catch(e => console.log(e))
+
+Product.insertMany(
+    [{
+        name: "Chicken",
+        photo: "https://cdn.pixabay.com/photo/2021/02/27/13/03/meat-6054509_1280.jpg",
+        price: 6.49,
+        category: "Meat"
+    },
+    {
+        name: "Steak",
+        photo: "https://cdn.pixabay.com/photo/2018/02/08/15/02/meat-3139641_1280.jpg",
+        price: 15.99,
+        category: "Meat"
+    }
+
+]
+)
+.then(res => console.log(res))
+.catch(e => console.log(e))
+
