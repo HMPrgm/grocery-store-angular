@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ProductgroupComponent } from "../productgroup/productgroup.component";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-storebody',
@@ -8,5 +9,11 @@ import { ProductgroupComponent } from "../productgroup/productgroup.component";
     imports: [ProductgroupComponent]
 })
 export class StorebodyComponent {
-  category = "Fruit"
+  route: ActivatedRoute = inject(ActivatedRoute);
+
+  category:string = "Fruit"
+
+  constructor(){
+    this.category = this.route.snapshot.params['cat'];
+  }
 }

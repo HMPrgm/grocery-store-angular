@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve && npm run style && nodemon index.js",
+    "start": "ng serve & npm run style & nodemon index.js",
     "start -s": "ng serve",
     "frontend": "ng serve & npm run style",
     "backend": "nodemon index.js",
