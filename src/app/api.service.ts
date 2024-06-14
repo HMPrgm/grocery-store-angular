@@ -42,14 +42,19 @@ export class ApiService {
   async getCart(): Promise<ProductWithQty[]> {
       return (await this.getProductsPromise('cart') as ProductWithQty[]);
   }
-  addToCart(p:Product,qty:Number): void{
+  async addToCart(p:Product,qty:Number): Promise<Number>{
     const info = {
       id: p._id,
       qty
     }
-    this.http.post<any>(`${this.apiUrl}/cart`,info,{
-      headers: { 'Content-Type': 'application/json' }
-    }).subscribe()
+    try {
+      await this.http.post<any>(`${this.apiUrl}/cart`,info,{
+        headers: { 'Content-Type': 'application/json' }
+      }).subscribe()
+      return 200;
+    } catch (e) {
+      return 500;
+    }
   }
   checkout(): void{
 

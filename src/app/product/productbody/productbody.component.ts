@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { FoodsService } from '../../foods.service';
 import { Product } from '../../product';
-import { CartService } from '../../cart.service';
+
 import { ApiService } from '../../api.service';
 
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -17,7 +17,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class ProductbodyComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   // foodService: FoodsService = inject(FoodsService);
-  cartService: CartService = inject(CartService);
+ 
   api: ApiService = inject(ApiService);
   router: Router = inject(Router)
 
