@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './product';
 import { ProductWithQty } from './product-with-qty';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -42,19 +42,15 @@ export class ApiService {
   async getCart(): Promise<ProductWithQty[]> {
       return (await this.getProductsPromise('cart') as ProductWithQty[]);
   }
-  async addToCart(p:Product,qty:Number): Promise<Number>{
+  async addToCart(p:Product,qty:Number): Promise<any>{
     const info = {
       id: p._id,
       qty
     }
-    try {
-      await this.http.post<any>(`${this.apiUrl}/cart`,info,{
+      return await firstValueFrom(this.http.post<any>(`${this.apiUrl}/cart`,info,{
         headers: { 'Content-Type': 'application/json' }
-      }).subscribe()
-      return 200;
-    } catch (e) {
-      return 500;
-    }
+      }));
+      
   }
   checkout(): void{
 
