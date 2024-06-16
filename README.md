@@ -1,4 +1,4 @@
-# Grocery Store Project
+# Groceries Online
 This project was created to help me learn Angular. It's a simple grocery ecommerce site.
 ## Installation
 In order to use the project, you need the following
