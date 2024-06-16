@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Product = require('./models/product')
+const Product = require('../models/product')
 // const Cart = require('./models/cart')
 
 main().catch(err => console.log(err));

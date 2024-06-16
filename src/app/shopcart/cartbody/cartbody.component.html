@@ -14,7 +14,17 @@
             <div class="mb-10 mt-2 text-xl font-semibold">
                 Total: {{getPrice()}}
             </div>
-            <a class="bg-gray-900 py-2 px-4 text-white rounded font-bold" (click)="checkout()" href="/cart">Checkout</a>
+            <form [formGroup]="checkOutForm" (submit)="checkout()">
+                <div class="mb-10">
+                    <label for="email" class="text-xl font-semibold pr-3">Email</label>
+                    <input class="input-text" type="email" name="Email" id="email" formControlName="email" placeholder="your-email@gmail.com">
+                </div>
+
+
+                <div>
+                    <input type="submit" class="bg-gray-900 py-2 px-4 text-white font-medium rounded font-bol hover:cursor-pointer hover:bg-slate-700 transition-colors duration-300 " (click)="checkout()" value="Checkout"/>
+                </div>
+            </form>
         </div>
     </div>
 </div>

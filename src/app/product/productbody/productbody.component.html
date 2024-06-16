@@ -1,6 +1,6 @@
-<div class="grid grid-cols-3 gap-4 mx-32 my-10 p-10 bg-gray-200 rounded-lg sm:grid-cols-1">
+<div class="grid lg:grid-cols-3 md:grid-cols-3 gap-4 mx-32 my-10 p-10 bg-gray-200 rounded-lg sm:grid-cols-1">
     <div class=""><img src="{{product?.photo}}" alt="product?.name" class="w-full h-full"></div>
-    <div class="flex justify-start flex-col">
+    <div class="flex justify-start flex-col m-10">
         <h1 class="text-4xl mb-11 font-bold">{{product?.name}}</h1>
         <p class="text-xl mb-11 font-medium">Price: ${{product?.price}}</p>
     </div>
@@ -9,7 +9,7 @@
         <form [formGroup]="addToCart" (submit)="submitAddToCart()" class="flex flex-col gap-8">
             <div>
                 <label for="qty" class="mr-3 font-medium">Quantity:</label>
-                <input type="number" name="Quantity" id="qty" min="1" max="1000" [defaultValue]="1" class="py-1 px-2 w-16 rounded-md" formControlName="qty">
+                <input type="number" name="Quantity" id="qty" min="1" max="1000" [defaultValue]="1" class="input-text w-16" formControlName="qty">
             </div>
             <div>
                 <input type="submit" class="bg-gray-900 text-white font-bold py-2 px-4 rounded hover:cursor-pointer" value="Add to Cart" />

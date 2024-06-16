@@ -52,9 +52,11 @@ export class ApiService {
       }));
       
   }
-  checkout(): void{
+  checkout(email:string): void{
 
-    this.http.post<any>(`${this.apiUrl}/checkout`,{"status":200},{
+    this.http.post<any>(`${this.apiUrl}/checkout`,{
+      email
+    },{
       headers: { 'Content-Type': 'application/json' }
     }).subscribe()
   }
