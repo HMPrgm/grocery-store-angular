@@ -74,6 +74,12 @@ Product.insertMany(
       photo: "https://cdn-icons-png.flaticon.com/512/6866/6866618.png",
       price: 3.49,
       category: "Fruit"
+    },
+    {
+      name: "Kiwi",
+      photo: "https://cdn-icons-png.flaticon.com/512/1410/1410997.png",
+      price: 0.01,
+      category: "Fruit"
     }
 
 ]
@@ -92,6 +98,24 @@ Product.insertMany(
         name: "Steak",
         photo: "https://cdn.pixabay.com/photo/2018/02/08/15/02/meat-3139641_1280.jpg",
         price: 15.99,
+        category: "Meat"
+    },
+    {
+        name: "Venison",
+        photo: "https://cdn.pixabay.com/photo/2021/09/08/19/51/game-meat-6607794_1280.jpg",
+        price: 23.99,
+        category: "Meat"
+    },
+    {
+        name: "Shrimp",
+        photo: "https://cdn.pixabay.com/photo/2017/06/11/22/55/shrimp-2393818_1280.jpg",
+        price: .25,
+        category: "Meat"
+    },
+    {
+        name: "Crab",
+        photo: "https://cdn.pixabay.com/photo/2017/03/07/14/26/crab-2124136_1280.jpg",
+        price: 7.25,
         category: "Meat"
     }
 
