@@ -84,7 +84,7 @@ Product.insertMany(
 Product.insertMany(
     [{
         name: "Chicken",
-        photo: "https://cdn.pixabay.com/photo/2021/02/27/13/03/meat-6054509_1280.jpg",
+        photo: "https://cdn.pixabay.com/photo/2014/03/05/01/20/chicken-breast-279848_1280.jpg",
         price: 6.49,
         category: "Meat"
     },
