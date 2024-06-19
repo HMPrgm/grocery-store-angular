@@ -35,9 +35,9 @@ export class CartbodyComponent {
 
     async checkout() {
         const email = this.checkOutForm.value.email;
-        if (!(email === undefined || email === null)) {
+        if (!(email === undefined || email === null || email === "" || !email.includes("@"))) {
             console.log(await this.api.checkout(email));
+            this.router.navigate(['/'])
         }
-        this.router.navigate(['/'])
     }
 }

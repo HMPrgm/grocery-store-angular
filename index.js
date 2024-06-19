@@ -57,7 +57,7 @@ app.post('/checkout', async (req,res) => {
   const subject = "Your Groceries Online Order"
   const text = "Hello World"
   try {
-    await sendEmail(to, subject, text);
+    await sendMail(to, subject, text);
     res.send(status.success)
   } catch (error) {
     res.send(status.serverFailure)

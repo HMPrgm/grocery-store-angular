@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from './product';
 import { ProductWithQty } from './product-with-qty';
 import { Observable, firstValueFrom } from 'rxjs';
+import { Console } from 'node:console';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,6 @@ export class ApiService {
       
   }
   checkout(email:string): void{
-
     this.http.post<any>(`${this.apiUrl}/checkout`,{
       email
     },{
