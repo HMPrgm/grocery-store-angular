@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  logo="https://www.iconpacks.net/icons/2/free-apple-icon-3155-thumb.png"
+  logo="apple.png"
   title="Groceries Online"
   
   
