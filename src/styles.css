@@ -927,6 +927,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-Cwhite {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 225 221 / var(--tw-bg-opacity));
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1309,6 +1314,11 @@ video {
   .dark\:bg-gray-900 {
     --tw-bg-opacity: 1;
     background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  }
+
+  .dark\:bg-Cblack {
+    --tw-bg-opacity: 1;
+    background-color: rgb(13 27 42 / var(--tw-bg-opacity));
   }
 
   .dark\:text-gray-400 {
