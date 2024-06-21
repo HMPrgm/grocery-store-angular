@@ -2,7 +2,7 @@ ul>li{
     @apply py-4 px-6
 }
 ul>li:hover{
-    @apply font-medium underline
+    @apply underline underline-offset-2
 }
 
 .menu-btn>span{

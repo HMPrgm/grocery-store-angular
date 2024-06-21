@@ -3,19 +3,18 @@
   <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{title}}</span>
 </a> -->
 
-<nav class="bg-Cwhite dark:bg-Cblack">
+<nav class="bg-Cwhite dark:bg-Cdarkblue">
   <div class="container mx-auto flex justify-between h-20 items-center">
     <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={{logo}} class="h-8" alt="Logo" />
       <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{title}}</span>
     </a>
 
     <div class="flex ">
       <div> <!-- *ngIf="isMenuOpen" -->
-        <ul class="text-Cwhite flex font-bold menu-transition" [ngClass]="{' translate-x-96': !isMenuOpen}">
-          <li><a href="/about">About</a></li>
-          <li><a href="/store">Store</a></li>
-          <li><a href="/cart">Cart</a></li>
+        <ul class="text-Cwhite flex font-bold">
+          <li [ngClass]="{'opacity-0': !isMenuOpen}" class="delay-[200ms] menu-transition"><a href="/about">About</a></li>
+          <li [ngClass]="{'opacity-0': !isMenuOpen}" class="delay-[100ms] menu-transition"><a href="/store">Store</a></li>
+          <li [ngClass]="{'opacity-0': !isMenuOpen}" class="delay-[50ms] menu-transition"><a href="/cart">Cart</a></li>
         </ul>
       </div>
       <button class="text-Cwhite menu-btn gap-1 pl-8 pr-4" (click)="toggleMenu()">
