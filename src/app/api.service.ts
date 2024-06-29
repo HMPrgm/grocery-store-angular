@@ -55,7 +55,7 @@ export class ApiService {
   }
   checkout(email:string): void{
     this.http.post<any>(`${this.apiUrl}/checkout`,{
-      email
+      to:email
     },{
       headers: { 'Content-Type': 'application/json' }
     }).subscribe()

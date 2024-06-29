@@ -53,7 +53,7 @@ app.post('/cart', async (req, res) => {
 
 app.post('/checkout', async (req,res) => {
   const { to } = req.body;
-
+  console.log("HI",to)
   const subject = "Your Groceries Online Order"
   const text = "Hello World"
   try {
