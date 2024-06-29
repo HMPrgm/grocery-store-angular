@@ -33,7 +33,7 @@ app.get('/products', async (req, res) => {
 
 app.post('/cart', async (req, res) => {
   let { id, qty } = req.body;
-  qty = qty ? qty : 1;
+  qty = Math.min(qty,1)
   try {
     const product = await Product.findById(id);
     if (!cart.find(val => val.product._id == id)) {
@@ -53,9 +53,8 @@ app.post('/cart', async (req, res) => {
 
 app.post('/checkout', async (req,res) => {
   const { to } = req.body;
-  console.log("HI",to)
   const subject = "Your Groceries Online Order"
-  const text = "Hello World"
+  const text = cart.map(item => `${item.product.name}:${item.qty} for $${item.product.price} each\n`).join();
   try {
     await sendMail(to, subject, text);
     res.send(status.success)
