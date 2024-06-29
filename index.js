@@ -33,7 +33,7 @@ app.get('/products', async (req, res) => {
 
 app.post('/cart', async (req, res) => {
   let { id, qty } = req.body;
-  qty = Math.min(qty,1)
+  qty = Math.max(qty,1)
   try {
     const product = await Product.findById(id);
     if (!cart.find(val => val.product._id == id)) {
@@ -54,7 +54,7 @@ app.post('/cart', async (req, res) => {
 app.post('/checkout', async (req,res) => {
   const { to } = req.body;
   const subject = "Your Groceries Online Order"
-  const text = cart.map(item => `${item.product.name}:${item.qty} for $${item.product.price} each\n`).join();
+  const text = cart.map(item => `- ${item.product.name}: ${item.qty} for $${item.product.price} each`).join('\n');
   try {
     await sendMail(to, subject, text);
     res.send(status.success)
