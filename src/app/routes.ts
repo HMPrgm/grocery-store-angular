@@ -4,6 +4,7 @@ import { ProductbodyComponent } from "./product/productbody/productbody.componen
 import { HomebodyComponent } from "./home/homebody/homebody.component";
 import { CartbodyComponent } from "./shopcart/cartbody/cartbody.component";
 import { StoreFrontBodyComponent } from "./storeFront/store-front-body/store-front-body.component";
+import { AboutpageComponent } from "./about/aboutpage/aboutpage.component";
 
 const routeConfig: Routes = [
     {
@@ -30,6 +31,11 @@ const routeConfig: Routes = [
         path:'cart',
         component: CartbodyComponent,
         title: "Cart"
+    },
+    {
+        path:'about',
+        component: AboutpageComponent,
+        title: "About"
     }
 ];
 
