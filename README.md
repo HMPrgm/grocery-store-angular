@@ -5,6 +5,7 @@ In order to use the project, you need the following
 - Node.JS
 - MongoDB
 - Angular
+  
 To install the project
 1. Clone the Repository
 2. run `npm install` to install the packages for the project
